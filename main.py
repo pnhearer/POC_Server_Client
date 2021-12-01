@@ -2,17 +2,27 @@
 import socket
 import threading
 import logging
+from dotenv import load_dotenv
+from os import getenv as getenv
 
+#Initialize environment
+load_dotenv()
 # Constants
-HEADER = 64
-PORT = 5012
+HEADER = int(getenv('HEADER'))
+PORT = int(getenv('PORT'))
 SERVER = socket.gethostbyname(socket.gethostname())
 ADDR = (SERVER, PORT)
-FORMAT = 'utf-8'
-DISCONNECT_MESSAGE = "[DISCONNECTED]"
+FORMAT = getenv('FORMAT')
+DISCONNECT_MESSAGE = getenv('DISCONNECT_MESSAGE')
+LOG_LEVEL = getenv('LOG_LEVEL')
 
 
 logging.basicConfig(filename='log.txt',level=logging.INFO)
+
+#handle log file cleanup
+with open(file='log.txt', mode='w') as log_file:
+    log_file.write(' ')
+
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(ADDR)
 

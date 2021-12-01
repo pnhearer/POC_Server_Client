@@ -1,19 +1,7 @@
-INFO:root:[LISTENING] Server is listening on 10.246.86.75
-INFO:root:[NEW CONNECTION] ('10.246.86.75', 64335) connected.
+ INFO:root:[LISTENING] Server is listening on 192.168.6.8
+INFO:root:[NEW CONNECTION] ('192.168.6.8', 49697) connected.
 INFO:root:[ACTIVE CONNECTION] 1
-INFO:root:[('10.246.86.75', 64335)] This is just a plain old test message.
+INFO:root:[('192.168.6.8', 49697)] This is just a plain old test message.
 
-INFO:root:[NEW CONNECTION] ('10.246.86.75', 64337) connected.
-INFO:root:[('10.246.86.75', 64337)] This is just a plain old test message.
-
-INFO:root:[ACTIVE CONNECTION] 2
-INFO:root:[NEW CONNECTION] ('10.246.86.75', 64339) connected.
-INFO:root:[('10.246.86.75', 64339)] This is just a plain old test message.
-
-INFO:root:[ACTIVE CONNECTION] 3
-INFO:root:[('10.246.86.75', 64339)] Disconnecting now
-INFO:root:[('10.246.86.75', 64337)] Disconnecting now
-INFO:root:[('10.246.86.75', 64335)] Disconnecting now
-INFO:root:[('10.246.86.75', 64339)] [DISCONNECTED]
-INFO:root:[('10.246.86.75', 64337)] [DISCONNECTED]
-INFO:root:[('10.246.86.75', 64335)] [DISCONNECTED]
+INFO:root:[('192.168.6.8', 49697)] Disconnecting now
+INFO:root:[('192.168.6.8', 49697)] [DISCONNECTED]
