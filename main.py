@@ -47,11 +47,18 @@ def handle_client(connection, address):
 def start():
     server.listen()
     logging.info(f"[LISTENING] Server is listening on {SERVER}")
-    while True:
+    
+    
+    with ThreadPoolExecutor(thread_name_prefix='conn') as executor:
         connection, address = server.accept()
-        thread = threading.Thread(target=handle_client, args=(connection, address))
-        thread.start()
+        this_connection = executor.submit(handle_client, connection, address)
         logging.info(f"[ACTIVE CONNECTION] {threading.active_count() - 1}")
+        this_connection.result()
+#     while True:
+#         connection, address = server.accept()
+#         thread = threading.Thread(target=handle_client, args=(connection, address))
+#         thread.start()
+#         logging.info(f"[ACTIVE CONNECTION] {threading.active_count() - 1}")
 
 
 if __name__ == "__main__":
