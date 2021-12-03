@@ -4,7 +4,7 @@ import threading
 import logging
 from dotenv import load_dotenv
 from os import getenv as getenv
-
+from concurrent.futures import ThreadPoolExecutor
 #Initialize environment
 load_dotenv()
 # Constants
@@ -53,7 +53,7 @@ def start():
         connection, address = server.accept()
         this_connection = executor.submit(handle_client, connection, address)
         logging.info(f"[ACTIVE CONNECTION] {threading.active_count() - 1}")
-        this_connection.result()
+        print(this_connection.result())
 #     while True:
 #         connection, address = server.accept()
 #         thread = threading.Thread(target=handle_client, args=(connection, address))
